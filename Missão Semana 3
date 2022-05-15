@@ -1,0 +1,24 @@
+algoritmo "Programa de cálculo de aumento salarial"
+
+
+var
+sal_atual : real
+nome_fun : literal
+val_x, sal_aum : real
+
+
+inicio
+// Entrada de dados
+escreval ("Olá, informe o nome do funcionário :")
+leia (nome_fun)
+escreval ("Agora informe o salário atual :")
+leia (sal_atual)
+escreval ("Quantos por centos deseja-se aumentar ?")
+leia (val_x)
+
+// Processamento de dados
+sal_aum <- sal_atual + (sal_atual * (val_x/100))
+
+// Saída de dados
+escreval ("O salário pós aumento será de ",sal_aum:1:2) //1:2 define que será dado :1 espaço para escrever o valor com :2 casas decimais (sintaxe p/ arredondamento no visualg)
+fimalgoritmo
