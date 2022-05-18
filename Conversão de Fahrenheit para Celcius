@@ -1,0 +1,31 @@
+algoritmo "Conversão de graus Fahrenheit para Celcius"
+// Função : resultado = (tf-32)/1.8
+// Autor : Gabriel Martins
+// Data : 17/05/2022
+var
+tf, resultado: real
+inicio
+// Entrada de dados
+escreval ("------------- Programa de conversão de Fahrenheit para graus Celcius -------------")
+escreval
+escreval ("Olá, por favor, me informe qual é a temperatura em Fahrenheit (apenas os números):")
+leia (tf) // temperatura em Fahrenheit
+//processamento de dados
+resultado <- (tf - 32)/1.8
+
+//saída de dados
+se (resultado<=15) entao
+   escreval ("A temperatura em Celcius é ",resultado:1:2," graus, está frio!")
+   escreval("================================================================================)
+senao
+   se (resultado<=28) entao
+      escreval(" A temperatura em Celcius é ", resultado:1:2, " graus, está agradável!")
+      escreval("")
+      escreval("==========================================================================")
+   senao
+      escreval("A temperatura em Celcius é ",resultado:1:2, " graus, está calor!")
+      escreval("==========================================================================")
+   fimse
+fimse
+escreva ("Obrigado.")
+fimalgoritmo
