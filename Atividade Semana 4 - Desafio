@@ -63,7 +63,7 @@ repita
       fimse // há apenas 2 ses de 2ªhierarquia
       fimse
 fimse // fim do se de 1ª hierarquia
-leia (op) // leu algum se de cima, retorna pedindo para ler novamente o var op
+leia (op) // leu algum se de cima, retorna pedindo para ler novamente a var op
 
 ate op = 5 // flag de saída
 fimalgoritmo
