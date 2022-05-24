@@ -42,28 +42,27 @@ repita
       resulf <- ((cel * (9/5)) + 32)
       escreval ("A temperatua em Fahrenheit é º",resulf:1:2,"ºF.")
       escreval("-----------------------------------------------")
-      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+      escreval ("Deseja realizar nova conversão? Se sim, digite o mesmo ou outro menu, se não digite 5")
    senao
         se op = 3 entao // 2º se de 2ªhierarquia
       escreval("Qual a cotação do dólar atual?")
       leia (cot)
       escreval("Qual o valor?")
       leia (val_r)
-      escreval("O valor em dólares é: ", val_r/cot:1:2)
+      escreval("O valor em dólares é: US$", val_r/cot:1:2)
       escreval("-----------------------------------------------")
-      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+      escreval ("Deseja realizar nova conversão? Se sim, digite o mesmo ou outro menu, se não digite 5")
    senao  op = 4 entao // Não há se para fechar o bloco, NUNCA SE ESQUECER, TEM DE TERMINAR UNICAMENTE COM SENAO
       escreval("Qual a cotação do dólar atual?")
       leia (cot)
       escreval("Qual o valor?")
       leia (val_r)
-      escreval("O valor em reais é: ", val_r*cot:1:2)
+      escreval("O valor em reais é: R$", val_r*cot:1:2)
       escreval("-----------------------------------------------")
-      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+      escreval ("Deseja realizar nova conversão? Se sim, digite o mesmo ou outro menu, se não digite 5")
       fimse // há apenas 2 ses de 2ªhierarquia
       fimse
 fimse // fim do se de 1ª hierarquia
 leia (op) // leu algum se de cima, retorna pedindo para ler novamente a var op
-
-ate op = 5 // flag de saída
+      ate op = 5 // flag de saída
 fimalgoritmo
