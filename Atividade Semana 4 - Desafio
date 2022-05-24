@@ -28,47 +28,42 @@ escreval("Opção escolhida : ",op)
 
 //PROCESSAMENTO DE DADOS
 repita
-   se op = 1 entao
+   se op = 1 entao  // Início e fim da primeira hierarquia
       escreval("Quantos graus Fahrenheit?")
       leia (fah)
       resulc <- (fah - 32)*5/9
       escreval ("A temperatua em Celcius é ",resulc:1:2,"ºC.")
       escreval("-----------------------------------------------")
-   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
-   fimse
-
-
-   se op = 2 entao
+      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   senao // Início da 2ª hierarquia, contar os ses a partir daqui
+        se op = 2 entao  // 1º se de 2ªhierarquia
       escreval("Quantos graus Celcius?")
       leia (cel)
       resulf <- ((cel * (9/5)) + 32)
       escreval ("A temperatua em Fahrenheit é º",resulf:1:2,"ºF.")
       escreval("-----------------------------------------------")
-   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
-   fimse
-
-
-   se op = 3 entao
+      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   senao
+        se op = 3 entao // 2º se de 2ªhierarquia
       escreval("Qual a cotação do dólar atual?")
       leia (cot)
       escreval("Qual o valor?")
       leia (val_r)
       escreval("O valor em dólares é: ", val_r/cot:1:2)
       escreval("-----------------------------------------------")
-   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
-   fimse
-
-
-   se op = 4 entao
+      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   senao  op = 4 entao // Não há se para fechar o bloco, NUNCA SE ESQUECER, TEM DE TERMINAR UNICAMENTE COM SENAO
       escreval("Qual a cotação do dólar atual?")
       leia (cot)
       escreval("Qual o valor?")
       leia (val_r)
       escreval("O valor em reais é: ", val_r*cot:1:2)
       escreval("-----------------------------------------------")
-   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
-   fimse
-   leia (op)
+      escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+      fimse // há apenas 2 ses de 2ªhierarquia
+      fimse
+fimse // fim do se de 1ª hierarquia
+leia (op) // leu algum se de cima, retorna pedindo para ler novamente o var op
 
-ate op = 5
+ate op = 5 // flag de saída
 fimalgoritmo
