@@ -1,0 +1,75 @@
+algoritmo "Programa Pacetech - Conversão temperatura/moeda"
+// Função : Conversor
+// Autor : Gabriel Martins
+// Data : 22/05/2022
+
+var
+c, f: real
+op, op2: inteiro
+fah,cel, resulc, resulf, cot,val_r, val_d: real
+
+inicio
+// ENTRADA DE DADOS
+escreval ("------------------- Programa Pacetech - Conversão temperatura/moeda -----------------")
+escreval("")
+Escreval ("Olá, por favor, digite o número do menu: ")
+escreval("")
+escreval("----------------- Temperatura ----------------")
+escreval("1 -          Converter Fahrenheit para Celcius")
+escreval("2 -          Converter Celcius para Fahrenheit")
+escreval("")
+escreval("---------------- Dinheiro --------------------")
+escreval("3 -          Converter Reais para Dolar")
+escreval("4 -          Converter Dolar para Reais")
+escreval("")
+escreval("5 -          Sair")
+escreval ("==============================================")
+leia(op)
+escreval("Opção escolhida : ",op)
+
+//PROCESSAMENTO DE DADOS
+repita
+   se op = 1 entao
+      escreval("Quantos graus Fahrenheit?")
+      leia (fah)
+      resulc <- (fah - 32)*5/9
+      escreval ("A temperatua em Celcius é ",resulc:1:2,"ºC.")
+      escreval("-----------------------------------------------")
+   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   fimse
+
+
+   se op = 2 entao
+      escreval("Quantos graus Celcius?")
+      leia (cel)
+      resulf <- ((cel * (9/5)) + 32)
+      escreval ("A temperatua em Fahrenheit é º",resulf:1:2,"ºF.")
+      escreval("-----------------------------------------------")
+   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   fimse
+
+
+   se op = 3 entao
+      escreval("Qual a cotação do dólar atual?")
+      leia (cot)
+      escreval("Qual o valor?")
+      leia (val_r)
+      escreval("O valor em dólares é: ", val_r/cot:1:2)
+      escreval("-----------------------------------------------")
+   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   fimse
+
+
+   se op = 4 entao
+      escreval("Qual a cotação do dólar atual?")
+      leia (cot)
+      escreval("Qual o valor?")
+      leia (val_r)
+      escreval("O valor em reais é: ", val_r*cot:1:2)
+      escreval("-----------------------------------------------")
+   escreval ("Deja realizar nova conversâo? Se sim, digite o mesmo ou outro menu, se não digite 5")
+   fimse
+   leia (op)
+
+ate op = 5
+fimalgoritmo
