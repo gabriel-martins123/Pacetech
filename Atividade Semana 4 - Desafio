@@ -4,8 +4,7 @@ algoritmo "Programa Pacetech - Conversão temperatura/moeda"
 // Data : 22/05/2022
 
 var
-c, f: real
-op, op2: inteiro
+op: inteiro
 fah,cel, resulc, resulf, cot,val_r, val_d: real
 
 inicio
