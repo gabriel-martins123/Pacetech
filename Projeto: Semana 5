@@ -1,0 +1,131 @@
+//Autor: Gabriel Martins
+
+algoritmo "Conversão de temperatura"
+var
+opcao,i,j:inteiro
+vC,vF,conversao: vetor[1..4] de real
+vH: vetor[1..4] de inteiro
+auxHora: inteiro
+auxTemp, auxConversao: real
+
+
+//Declaração dos procedimentos
+
+//Procedimento 1
+procedimento CparaF  // Esse procedimento vai converter Celcius -> Fahrenheit
+
+inicio
+
+
+para i de 1 ate 4 faca
+   Escreva("Informe a temperatura em Celsius: ")
+   leia(vC[i])
+
+
+   conversao[i] <- (vC[i]*1.8)+32
+
+   Escreva("Informe a hora em que a temperatura foi registrada: ")
+   leia(vH[i])
+
+   limpatela
+
+   para j de 1 ate 4 faca
+      se vC[j] > vC[i] entao
+         auxTemp <- vC[i]
+         auxHora <- vH[i]
+         auxConversao <- conversao[i]
+         vC[i] <- vC[j]
+         vH[i] <- vH[j]
+         conversao[i] <- conversao[j]
+         vC[j] <- auxTemp
+         vH[j] <- auxHora
+         conversao[j] <- auxConversao
+      fimse
+   fimpara
+fimpara
+limpatela
+para i de 1 ate 4 faca
+
+   Escreval ("A temperatura ",vC[i],"ºC", " registrada em ", vH[i], " horas corresponde a ", conversao[i]," ºF.")
+fimpara
+
+fimprocedimento
+
+// Procedimento 2
+
+procedimento FparaC  // Esse procedimento vai converter Fahrenheit -> Celcius
+
+inicio
+
+para i de 1 ate 4 faca
+
+   Escreva("Informe a temperatura em Fahrenheit: ")
+   leia(vF[i])
+
+   conversao[i] <- (vF[i]-32)/1.8
+
+   Escreva("Informe a hora em que a temperatura foi registrada: ")
+   leia(vH[i])
+   limpatela
+
+   para j de 1 ate 4 faca
+      se vF[j] > vF[i] entao
+         auxTemp <- vF[i]
+         auxHora <- vH[i]
+         auxConversao <- conversao[i]
+         vF[i] <- vF[j]
+         vH[i] <- vH[j]
+         conversao[i] <- conversao[j]
+         vF[j] <- auxTemp
+         vH[j] <- auxHora
+         conversao[j] <- auxConversao
+      fimse
+   fimpara
+fimpara
+
+para i de 1 ate 4 faca
+
+   Escreval ("A temperatura ",vF[i],"ºF", " registrada em ", vH[i], " horas corresponde a ", conversao[i]:2:1," ºC.")
+
+fimpara
+
+fimprocedimento
+
+
+// Início da Codificação
+inicio
+escreval ("------------------ Programa de Conversão de Temperatura ------------------")
+repita // Menu criado com repita
+
+   Escreval("Olá, informe o número da opção desejada:")
+   Escreval("")
+   Escreval("1. Conversão de fahrenheit para Celsius")
+   Escreval("2. Conversão de Celsius para fahrenheit")
+   Escreval("3. Sair")
+   escreval("")
+   escreva("Opção escolhida: ")
+   leia(opcao)
+   escreval("")
+
+
+   escolha opcao
+
+   caso 1
+
+      CparaF
+
+   caso 2
+
+      FparaC
+
+   caso 3
+      opcao <-3
+
+   outrocaso
+      escreval ("Opção inválida")
+
+   fimescolha
+
+ate opcao = 3
+
+fimalgoritmo
