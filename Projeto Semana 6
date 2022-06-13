@@ -1,50 +1,71 @@
-package ProjetoSemana6;
 
+package MeuProjetoSemana6;
 import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
-        Scanner leia = new Scanner(System.in);
-        do {
-            System.out.println("Ola seja bem vindo, escolha uma das opcoes abaixo :");
-            System.out.println("1. Converter Celsius em Fahrenheit");
-            System.out.println("2. Converter Fahrenhet em Celsiu");
-            System.out.println("3. Sair");
-            int opcao = leia.nextInt();   
-            
-        
-        
-        float celsius;
-        float fahrenheit;
-        System.out.print("Digite a temperatura em graus celsius : ");
+    float fahrenheit = 0;     float celsius = 0; float cotacao = 0; float dolar = 0;
+    float resulf = 0; float resulc = 0;
+    int menu = 0;    
+    Scanner leia = new Scanner(System.in);
+    do {
+    System.out.println("Programa de conversao de moeda/temperatura");
+    System.out.println("Escolha uma das opcoes abaixo");
+    System.out.println("1. Celsius para Farenheit");
+    System.out.println("2. Fahrenheit para Celsius");
+    System.out.println("3. Reais para Dolar");
+    System.out.println("4. Dolar para Reais");
+    System.out.println("5. Encerrar programa");
+    System.out.print("Opcao escolhida: ");
+    menu=leia.nextInt();
+    switch (menu){
+        case 1:
+        System.out.print("Digite a temperatura em Celsius: ");
         celsius = leia.nextFloat();
-        System.out.print(celsius + " graus Celcius equivalem a: " + ((celsius * 1.8) + 32) + " graus F");
-        /*Cuidado com a divisão 9/5, divisão entre inteiros retorna valor inteiro e o resultado 
-     dá errado*/
-        System.out.print("Digite a temperatura em graus Fahrenheit : ");
+        resulf = (float) ((celsius*1.8)+32);
+        System.out.println();
+        System.out.println("A temperatura em graus fahrenheit e: "+ resulf);
+        System.out.println("----------------------------------------------");
+        break;
+        
+        case 2:
+        System.out.print("Digite a temperatura em Fahrenheit: ");
         fahrenheit = leia.nextFloat();
-        System.out.print(fahrenheit + " graus Fahrenheit equivalem a: " + ((fahrenheit - 32) * (5.0 / 9.0)) + " graus C");
-
-        float dolar;
-        float reais;
-        float cambio;
-        System.out.print("Qual o valor da cotação? ");
-        cambio = leia.nextFloat();
-        System.out.println("");
-        System.out.print("Quantos dólares? ");
-        dolar = leia.nextFloat();
-        System.out.println("");
-        System.out.print(dolar + " dólares em reais são " + "R$" + (dolar*cambio));
-
-        System.out.print("Qual o valor da cotação? ");
-        cambio = leia.nextFloat();
-        System.out.println("");
+        resulc = (float) ((fahrenheit-32)*5/9);
+        System.out.println();
+        System.out.println("A temperatura em graus Celcius e: "+ resulc);
+        System.out.println("----------------------------------------------");
+        break;
+        
+        case 3:
+        System.out.print("Digite a cotacao: ");
+        cotacao = leia.nextFloat();
         System.out.print("Quantos reais? ");
-        reais = leia.nextFloat();
+        float reais = leia.nextFloat();
+        dolar = (float) (reais/cotacao);
+        System.out.println();
+        System.out.println("R$"+reais+" equivalem a "+String.format("%.2f",dolar)+"dolares");
+        System.out.println("----------------------------------------------");
+        break;
+        
+        case 4:
+        System.out.print("Digite a cotacao: ");
+        cotacao = leia.nextFloat();
+        System.out.print("Quantos dolares? ");
+        dolar = leia.nextFloat();
+        float resultadodolar = (float) (dolar*cotacao);
+        System.out.println();
+        System.out.println(dolar+" dolares equivalem a "+String.format("%.2f",resultadodolar)+"reais");
+        System.out.println("----------------------------------------------");
+        break;
+        
+        default:
+        System.out.println("Opcao invalida, tente novamente.");
+        System.out.print("-------------------------------------");
         System.out.println("");
-        System.out.print("R$" + reais + " equivalem a " + (reais/cambio));
-
+           
     }
-
+     
+    }while (menu!=5);
+    
+}
 }
