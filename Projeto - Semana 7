@@ -1,1 +1,82 @@
+CLASS MAIN:
+
+package ProjetoSemana7;
+
+import java.text.DecimalFormat;
+
+public class Main {
+
+    public static void main(String[] args) {
+    Empregado em1 = new Empregado("Antônio", "Souza", 2500.39);
+    Empregado em2 = new Empregado("Maria", "Do Carmo", 7500.39);
+    DecimalFormat frmt = new DecimalFormat("#.##");
+    
+    System.out.println("Funcionário 1: "+em1.getNome()+" "+em1.getSobrenome()+", salário mensal:"
+            + " R$"+em1.getSalario()+", Salário anual: R$"+(12*em1.getSalario()));
+    System.out.println("Reajuste anual de 10%: R$"+(frmt.format(12*em1.CalcularAumento())));
+    
+    System.out.println("");
+    
+    System.out.println("Funcionário 2: "+em2.getNome()+" "+em2.getSobrenome()+", salário menal:"
+            + " R$"+em2.getSalario()+", salário anual: R$"+(12*em2.getSalario()));
+    System.out.println("Reajuste anual de 10%: R$"+(frmt.format(12*em2.CalcularAumento())));
+    
+    
+    }
+    
+}
+
+
+CLASS EMPREGADO:
+
+package ProjetoSemana7;
+
+public class Empregado {
+
+    private String nome;
+    private String sobrenome;
+    private double salario;
+
+    public Empregado(String nome, String sobrenome, double salario) {
+        this.setNome(nome);
+        this.setSobrenome(sobrenome);
+        this.setSalario(salario);
+    }
+
+
+    public float CalcularAumento(){
+        return (float) ((float) salario + (salario * 0.10));
+
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public float getSalario() {
+        return (float) salario;
+    }
+
+    public void setSalario(double salario) {
+        if (salario<0){
+            this.salario = 0;
+        } else {
+        this.salario = salario;    
+        }
+        
+    }
+
+}
 
